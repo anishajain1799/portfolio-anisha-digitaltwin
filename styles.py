@@ -12,21 +12,21 @@ EXAMPLES = [
 ]
 
 CSS = """
+
 :root {
-  --twin-gold: #ecad0a;
-  --twin-blue: #209dd7;
-  --twin-purple: #753991;
-  --twin-bg: #0d0d10;
-  --twin-surface: #16161b;
-  --twin-surface-2: #1c1c22;
-  --twin-border: #2a2a32;
-  --twin-border-strong: #3a3a44;
-  --twin-text: #ececef;
-  --twin-muted: #8c8c95;
+  --twin-gold: #3ddc84;    /* was #ecad0a — now matches portfolio's signal green */
+  --twin-blue: #3ddc84;    /* was #209dd7 — user bubbles now use the same signal green */
+  --twin-purple: #f2a93b;  /* was #753991 — assistant stripe/accent now matches portfolio's amber */
+  --twin-bg: #0e1116;
+  --twin-surface: #141a21;
+  --twin-surface-2: #1a2129;
+  --twin-border: #232c36;
+  --twin-border-strong: #2f3946;
+  --twin-text: #e7edf3;
+  --twin-muted: #8b96a3;
 }
 
-/* Light mode: Gradio adds `.dark` to <body> when dark; absence = light.
-   Only the neutral palette flips — gold/blue/purple accents stay identical. */
+
 body:not(.dark) {
   --twin-bg: #f4f4f6;
   --twin-surface: #ffffff;
@@ -42,10 +42,12 @@ footer, .built-with, .show-api, .api-docs { display: none !important; }
 html, body, gradio-app { background: var(--twin-bg) !important; }
 
 /* ---------- Stable layout ---------- */
+
+
 .gradio-container {
   background: var(--twin-bg) !important;
   color: var(--twin-text) !important;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
   width: 100% !important;
   max-width: 880px !important;
   min-width: 0 !important;
@@ -119,14 +121,19 @@ button, input, textarea,
 }
 
 /* ---------- Bubble backgrounds (broad to cover Gradio variants) ---------- */
+
+
 .message-row.user-row .message,
 .message-row.user-row .message-bubble,
 .message-row.user-row .bubble,
 .message-row[data-role="user"] .message,
 .message-row[data-role="user"] .message-bubble {
   background: var(--twin-blue) !important;
-  color: #ffffff !important;
+  color: #06180f !important;
 }
+
+
+
 
 .message-row.bot-row .message,
 .message-row.bot-row .message-bubble,
@@ -258,10 +265,12 @@ button[variant="primary"],
 button.submit,
 button.submit-button,
 .submit-button,
+
+
 button.lg.primary {
   background: var(--twin-gold) !important;
   border: 1px solid var(--twin-gold) !important;
-  color: #111111 !important;
+  color: #06180f !important;
   min-height: 48px !important;
   align-self: stretch !important;
   padding: 0 14px !important;
@@ -273,9 +282,9 @@ button.primary:hover,
 button.submit:hover,
 .submit-button:hover,
 button.lg.primary:hover {
-  background: #ffc320 !important;
-  border-color: #ffc320 !important;
-  color: #111111 !important;
+  background: #5ee89c !important;
+  border-color: #5ee89c !important;
+  color: #06180f !important;
 }
 
 /* ---------- Submit-button icon: center vertically and size correctly ---------- */
@@ -289,7 +298,7 @@ button[variant="primary"] svg {
   margin: 0 auto !important;
   display: block !important;
   align-self: center !important;
-  color: #111111 !important;
+  color: #06180f!important;
   fill: currentColor !important;
   stroke: currentColor !important;
 }
@@ -304,7 +313,7 @@ button[variant="primary"] svg {
 .examples button, .example, .examples td button, [data-testid="examples"] button {
   background: var(--twin-surface) !important;
   border: 1px solid var(--twin-border) !important;
-  color: var(--twin-text) !important;
+  color: var(--twin-muted) !important;
   text-transform: none !important;
   letter-spacing: 0 !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
@@ -317,8 +326,8 @@ button[variant="primary"] svg {
   display: inline-block !important;
 }
 .examples button:hover, .example:hover, [data-testid="examples"] button:hover {
-  border-color: var(--twin-blue) !important;
-  color: var(--twin-blue) !important;
+  border-color: var(--twin-gold) !important;
+  color: var(--twin-gold  ) !important;
   background: var(--twin-surface) !important;
 }
 
@@ -343,7 +352,7 @@ button[variant="primary"] svg {
 ::-webkit-scrollbar-thumb:hover { background: var(--twin-purple); }
 
 /* ---------- Selection ---------- */
-::selection { background: var(--twin-gold); color: #111111; }
+::selection { background: var(--twin-gold); color: #06180f; }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 640px) {
